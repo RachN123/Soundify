@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Soundify</title>
+    <link rel="stylesheet" href="Soundify_Sounds_Page.css">
+    <link rel="shortcut icon" type="image/png" href="https://midwivesforhaiti.org/wp-content/uploads/megaphone.png">
+</head>
+<body>
+    <ul>
+        <li><a href="Soundify_Contact_Page.html">Contact</a></li>
+        <li><a class="active" href="Soundify_Sounds_Page.html">Sounds</a></li>
+        <li><a href="Soundify_About_Page.html">About</a></li>
+        <li><a href="Soundify_Home_Page.html">Home</a></li>
+    </ul>
+    <input type="textbox" id="type" placeholder="Type here...">
+    <h4 style = "display: inline-block;">Type:</h4>
+    <select id="mylist" onchange="myFunction()" style = "display: inline-block;" name="choices">
+        <option value="1st">All</option>
+        <option value="2nd">Animals</option>
+        <option value="3rd">Things</option>
+    </select>
+    <input type="submit" id="search" value="SEARCH">
+    <h1>Use the search bar or the drop down menu to find what noises you want!</h1>
+    <table id="myTable">
+        <tr>
+            <td><img id="things" src="Alarm.png" alt="Image not found"></td>
+            <td><img id="things" src="Bell.png" alt="Image not found"></td>
+            <td><img id="things" src="Car.png" alt="Image not found"></td>
+            <td><img id="animals" src="Cat.png" alt="Image not found"></td>
+        </tr>
+        <tr>
+            <td><img id="animals" src="Dog.png" alt="Image not found"></td>
+            <td><img id="animals" src="Dolphin.png" alt="Image not found"></td>
+            <td><img id="animals" src="Horse.png" alt="Image not found"></td>
+            <td><img id="things" src="Phone.png" alt="Image not found"></td>
+        </tr>
+        <tr>
+            <td><img id="animals" src="Pig.png" alt="Image not found"></td>
+            <td><img id="things" src="Ship.png" alt="Image not found"></td>
+            <td><img id="animals" src="Tiger.png" alt="Image not found"></td>
+            <td><img id="things" src="Train.png" alt="Image not found"></td>
+        </tr>
+    </table>
+    <script>
+        function myFunction() {
+            Document.write("All");
+          var input, filter, table, tr, td, i;
+          input = document.getElementById("mylist");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          if(filter==="ALL"){
+             
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                tr[i].style.display = "";
+            }       
+          }
+        }
+
+        else{
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              if (td.id.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        }
+    </script>
+</body>
+</html>
