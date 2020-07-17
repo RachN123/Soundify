@@ -13,66 +13,141 @@
         <li><a href="Soundify_About_Page.html">About</a></li>
         <li><a href="index.html">Home</a></li>
     </ul>
-    <input type="textbox" id="type" placeholder="Type here...">
     <h4 style = "display: inline-block;">Type:</h4>
     <select id="mylist" onchange="myFunction()" style = "display: inline-block;" name="choices">
         <option value="1st">All</option>
         <option value="2nd">Animals</option>
         <option value="3rd">Things</option>
     </select>
-    <input type="submit" id="search" value="SEARCH">
-    <h1>Use the search bar or the drop down menu to find what noises you want!</h1>
+    <script>
+      function myFunction() {
+          Document.write("All");
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("mylist");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        if(filter==="ALL"){
+           
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+              tr[i].style.display = "";
+          }       
+        }
+      }
+
+      else{
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            if (td.id.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }       
+        }
+      }
+      }
+  </script>
+    <h1>Use the drop down menu to find what noises you want!</h1>
     <table id="myTable">
         <tr>
-            <td><img id="things" src="Alarm.png" alt="Image not found"></td>
-            <td><img id="things" src="Bell.png" alt="Image not found"></td>
-            <td><img id="things" src="Car.png" alt="Image not found"></td>
-            <td><img id="animals" src="Cat.png" alt="Image not found"></td>
+            <td><a onclick="myAudioFunction('A')">
+              <input type="image" src="Alarm.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('B');">
+              <input type="image" src="Bell.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('C');">
+              <input type="image" src="Car.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('D');">
+              <input type="image" src="Cat.png">
+              </a>
+            </td>
         </tr>
         <tr>
-            <td><img id="animals" src="Dog.png" alt="Image not found"></td>
-            <td><img id="animals" src="Dolphin.png" alt="Image not found"></td>
-            <td><img id="animals" src="Horse.png" alt="Image not found"></td>
-            <td><img id="things" src="Phone.png" alt="Image not found"></td>
+            <td><a onclick="myAudioFunction('E');">
+              <input type="image" src="Dog.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('F');">
+              <input type="image" src="Dolphin.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('G');">
+              <input type="image" src="Horse.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('H');">
+              <input type="image" src="Phone.png">
+              </a>
+            </td>
         </tr>
         <tr>
-            <td><img id="animals" src="Pig.png" alt="Image not found"></td>
-            <td><img id="things" src="Ship.png" alt="Image not found"></td>
-            <td><img id="animals" src="Tiger.png" alt="Image not found"></td>
-            <td><img id="things" src="Train.png" alt="Image not found"></td>
+            <td><a onclick="myAudioFunction('I');">
+              <input type="image" src="Pig.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('J');">
+              <input type="image" src="Ship.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('K');">
+              <input type="image" src="Tiger.png">
+              </a>
+            </td>
+            <td><a onclick="myAudioFunction('L');">
+              <input type="image" src="Train.png">
+              </a>
+            </td>
         </tr>
+      <script>
+        var aAudio = new Audio('Alarm.wav');
+        var bAudio = new Audio('Bell.mp3');
+        var cAudio = new Audio('Car.wav');
+        var dAudio = new Audio('Cat.wav');
+        var eAudio = new Audio('Dog.wav');
+        var fAudio = new Audio('Dolphin.wav');
+        var gAudio = new Audio('Horse.wav');
+        var hAudio = new Audio('Phone.wav');
+        var iAudio = new Audio('Pig.wav');
+        var jAudio = new Audio('Ship.mp3');
+        var kAudio = new Audio('Tiger.wav');
+        var lAudio = new Audio('Train.mp3');
+        function myAudioFunction(letter) {
+          if(letter == 'A') {
+              aAudio.play();
+            } else if(letter == 'B') {
+                  bAudio.play();
+            } else if(letter == 'C') {
+                  cAudio.play();
+            } else if(letter == 'D') {
+                  dAudio.play();
+            } else if(letter == 'E') {
+                  eAudio.play();
+            } else if(letter == 'F') {
+                  fAudio.play();
+            } else if(letter == 'G') {
+                  gAudio.play();
+            } else if(letter == 'H') {
+                  hAudio.play();
+            } else if(letter == 'I') {
+                  iAudio.play();
+            } else if(letter == 'J') {
+                  jAudio.play();
+            } else if(letter == 'K') {
+                  kAudio.play();
+            } else if(letter == 'L') {
+                  lAudio.play();
+            }
+        }
+      </script>
     </table>
-    <script>
-        function myFunction() {
-            Document.write("All");
-          var input, filter, table, tr, td, i;
-          input = document.getElementById("mylist");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("myTable");
-          tr = table.getElementsByTagName("tr");
-          if(filter==="ALL"){
-             
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                tr[i].style.display = "";
-            }       
-          }
-        }
-
-        else{
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-              if (td.id.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            }       
-          }
-        }
-        }
-    </script>
 </body>
 </html>

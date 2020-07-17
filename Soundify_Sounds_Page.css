@@ -24,15 +24,7 @@ li a.active {
     background-color: lightblue;
 }
 select{
-    margin-left: 30px;
-}
-#search{
-    margin-top: 90px;
-    margin-left: 1440px;
-}
-#type{
-    margin-top: 90px;
-    margin-left: 1500px;
+    margin-left: 60px;
 }
 table{
     margin-top: 60px;
@@ -42,13 +34,13 @@ table{
 h1{
     text-align: center;
     color: black;
-    margin-top: -45px;
+    margin-top: -46px;
 }
 h4{
     text-align: center;
     color: black;
-    margin-top: -25px;
-    margin-left: -1550px;
+    margin-top: 85px;
+    margin-left: 155px;
 }
 body{
     background-color: beige;
